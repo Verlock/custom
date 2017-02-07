@@ -5,9 +5,11 @@
     }
     add_action( 'wp_enqueue_scripts', 'custom_script_enqueue');
 
-    function () {
-        //Theme Support Menus
-        add_theme_support( 'menus' );
+    function custom_theme_setup() {
+        add_theme_support( 'menus' ); //Theme Support Menus
+
+        register_nav_menu( 'primary', 'Primary Header Navigation' ); //Main Nav
+        register_nav_menu( 'secondary', 'Footer Navigation' );
     }
 
-    add_action( 'after_setup_theme', 'custom_theme_setup' );
+    add_action( 'init', 'custom_theme_setup' );
