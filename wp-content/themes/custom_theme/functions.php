@@ -5,3 +5,9 @@
     }
     add_action( 'wp_enqueue_scripts', 'custom_script_enqueue');
 
+    function () {
+        //Theme Support Menus
+        add_theme_support( 'menus' );
+    }
+
+    add_action( 'after_setup_theme', 'custom_theme_setup' );
